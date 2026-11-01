@@ -2,9 +2,9 @@ name: Build Android APK
 
 on:
   push:
-    branches: [ "**" ]
+    branches: ["**"]
   pull_request:
-    branches: [ "**" ]
+    branches: ["**"]
   workflow_dispatch:
 
 permissions:
@@ -51,9 +51,3 @@ jobs:
           name: PE-Shop-Printer-APK
           path: output/PE-Shop-Printer.apk
           retention-days: 30
-
-      - name: Publish GitHub Release
-        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master' || github.event_name == 'workflow_dispatch'
-        run: |
-          gh release delete v1.0.0 --yes || true
-          gh release create v1.0.0 output/PE-Shop-Printer.apk --title "PE App v1.0.0" --
