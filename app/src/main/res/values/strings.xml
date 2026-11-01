@@ -1,0 +1,102 @@
+<resources>
+    <string name="app_name">PE</string>
+    <string name="app_full_name">Pooja Enterprises</string>
+
+    <!-- First Run Setup -->
+    <string name="welcome_title">Welcome to PE</string>
+    <string name="welcome_subtitle">Fast LAN Thermal Bill Printer for Pooja Enterprises</string>
+    <string name="import_backup">Import Backup</string>
+    <string name="skip">Skip</string>
+    <string name="business_name">Business Name</string>
+    <string name="business_name_hint">e.g. Pooja Enterprises</string>
+    <string name="header_line_2">Header Line 2 (Optional)</string>
+    <string name="header_line_2_hint">e.g. Building Material</string>
+    <string name="address">Address</string>
+    <string name="address_hint">Shop address</string>
+    <string name="printer_ip">Printer IP Address</string>
+    <string name="printer_ip_hint">e.g. 192.168.1.100</string>
+    <string name="auto_scan">Auto Scan</string>
+    <string name="paper_size">Paper Size</string>
+    <string name="paper_size_80mm">80 mm (3 inch)</string>
+    <string name="paper_size_58mm">58 mm (2 inch)</string>
+    <string name="finish">Finish</string>
+
+    <!-- Navigation -->
+    <string name="nav_new_bill">New Bill</string>
+    <string name="nav_history">History</string>
+    <string name="nav_settings">Settings</string>
+
+    <!-- Statuses -->
+    <string name="status_idle">Idle</string>
+    <string name="status_printing">Printing</string>
+    <string name="status_busy">Busy</string>
+    <string name="status_paper_cover">Paper End / Cover Open</string>
+    <string name="status_offline">Offline</string>
+    <string name="pending_count">Pending: %1$d</string>
+
+    <!-- Main New Bill Screen -->
+    <string name="date">Date</string>
+    <string name="time">Time</string>
+    <string name="customer_name">Customer Name</string>
+    <string name="customer_name_hint">Type customer name</string>
+    <string name="customer_address">Customer Address</string>
+    <string name="customer_address_hint">Customer address</string>
+    <string name="save_customer">Save customer</string>
+    <string name="items_heading">Items</string>
+    <string name="item_name">Item name</string>
+    <string name="quantity">Quantity</string>
+    <string name="unit">Unit</string>
+    <string name="unit_pcs">Pcs</string>
+    <string name="unit_kg">Kg</string>
+    <string name="add_item">Add item</string>
+    <string name="send_on_whatsapp">Send on WhatsApp</string>
+    <string name="choose_number">Choose number</string>
+    <string name="print">Print</string>
+    <string name="confirm_and_print">Confirm and print</string>
+    <string name="edit">Edit</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+    <string name="delete_all">Delete all</string>
+    <string name="retry">Retry</string>
+
+    <!-- WhatsApp Types -->
+    <string name="type_my_number">My number</string>
+    <string name="type_customer">Customer</string>
+    <string name="type_staff">Staff</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="section_what_to_print">What to print</string>
+    <string name="section_business_details">Business details</string>
+    <string name="section_printer">Printer</string>
+    <string name="section_bill_style">Bill style</string>
+    <string name="section_data_management">Saved data</string>
+    <string name="section_backup">Backup and restore</string>
+
+    <!-- Toggles -->
+    <string name="toggle_business_name">Business name</string>
+    <string name="toggle_header_line_2">Header line 2</string>
+    <string name="toggle_address">Address</string>
+    <string name="toggle_date">Date</string>
+    <string name="toggle_time">Time</string>
+    <string name="toggle_customer_name">Customer name</string>
+    <string name="toggle_customer_address">Customer address</string>
+    <string name="toggle_table_heading">Table heading</string>
+    <string name="toggle_item_qty_unit">Item quantity and unit</string>
+    <string name="toggle_footer">Footer</string>
+    <string name="toggle_separators">Separator lines</string>
+    <string name="toggle_auto_cut">Auto cut</string>
+    <string name="toggle_whatsapp">WhatsApp sending</string>
+    <string name="toggle_pdf_history">Saving PDF history</string>
+    <string name="toggle_print_preview">Print preview</string>
+
+    <!-- Actions & Alerts -->
+    <string name="test_print">Test print</string>
+    <string name="import_backup_btn">Import backup</string>
+    <string name="export_backup_btn">Export backup</string>
+    <string name="reprint">Reprint</string>
+    <string name="view_pdf">View PDF</string>
+    <string name="clear_history">Delete all history</string>
+    <string name="printer_unreachable">Printer unreachable: check power, LAN cable, IP, same Wi-Fi.</string>
+</resources>
