@@ -16,10 +16,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up JDK 17
+      - name: Setup Java JDK
         uses: actions/setup-java@v4
         with:
           java-version: '17'
@@ -30,10 +30,9 @@ jobs:
         with:
           gradle-version: '8.6'
 
-      - name: Ensure Gradle wrapper exists
+      - name: Prepare Gradle wrapper
         run: |
           if [ ! -f gradle/wrapper/gradle-wrapper.jar ]; then
-            echo "Generating Gradle wrapper jar..."
             gradle wrapper --gradle-version 8.6
           fi
           chmod +x gradlew
@@ -41,35 +40,20 @@ jobs:
       - name: Build Debug APK
         run: ./gradlew assembleDebug --stacktrace
 
-      - name: Rename APK for easy identification
+      - name: Copy APK to output
         run: |
           mkdir -p output
           cp app/build/outputs/apk/debug/app-debug.apk output/PE-Shop-Printer.apk
-          echo "Built APK size:"
-          ls -lh output/PE-Shop-Printer.apk
 
-      - name: Upload APK Artifact
+      - name: Upload APK to Artifacts
         uses: actions/upload-artifact@v4
         with:
           name: PE-Shop-Printer-APK
           path: output/PE-Shop-Printer.apk
           retention-days: 30
 
-      - name: Create GitHub Release
+      - name: Publish GitHub Release
         if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master' || github.event_name == 'workflow_dispatch'
-        uses: softprops/action-gh-release@v2
-        with:
-          tag_name: v1.0.0
-          name: "PE App v1.0.0 (Release Build)"
-          body: |
-            ## PE - Pooja Enterprises LAN Thermal Bill Printer App
-            
-            ### How to install:
-            1. Download `PE-Shop-Printer.apk` below directly to your Android phone.
-            2. Tap the downloaded file to install.
-            3. If prompted, allow "Install from Unknown Sources".
-            4. Connect to shop Wi-Fi and print!
-          files: output/PE-Shop-Printer.apk
-          draft: false
-          prerelease: false
-        env:
+        run: |
+          gh release delete v1.0.0 --yes || true
+          gh release create v1.0.0 output/PE-Shop-Printer.apk --title "PE App v1.0.0" --
